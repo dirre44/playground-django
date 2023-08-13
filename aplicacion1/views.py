@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Curso
 from django.http import HttpResponse
+from django.template import Template, Context, loader
 
 # Create your views here.
 
@@ -19,3 +20,19 @@ def listar_cursos(request):
     for curso in cursos:
         respuesta += f"{curso.nombre} - {curso.comision}<br>"
     return HttpResponse(respuesta)
+
+def inicio(request):
+    return render(request,"inicio.html")
+
+def profesores(request):
+    return render(request,"profesores.html")
+
+def cursos(request):
+    cursos = Curso.objects.all()
+    return render(request,"cursos.html", {"cursos":cursos})
+
+def estudiantes(request):
+    return render(request,"estudiantes.html")
+
+def entregables(request):
+    return render(request,"entregables.html")
