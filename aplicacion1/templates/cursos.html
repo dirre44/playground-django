@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos</title>
-</head>
-<body>
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block encabezado %} Cursos {% endblock %}
+
+{% block titulo %} Listado de cursos {% endblock %}
+
+{% block contenido %} 
     <h1>Aca estan los Cursos</h1>
     {% for curso in cursos %}
         <li>{{ curso.nombre }} - {{ curso.comision }}</li>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
+    
