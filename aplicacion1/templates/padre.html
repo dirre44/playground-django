@@ -23,10 +23,11 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'inicio' %}">Mi primera web</a>
-                <a class="btn btn-primary" href="{% url 'profesores' %}">profesores</a>
-                <a class="btn btn-primary" href="{% url 'entregables' %}">entregables</a>
-                <a class="btn btn-primary" href="{% url 'estudiantes' %}">estudiantes</a>
-                <a class="btn btn-primary" href="{% url 'cursos' %}">cursos</a>
+                <a class={% block boton_profesores %} {% endblock %} href="{% url 'profesores' %}">profesores</a>
+                <a class={% block boton_entregabless %} {% endblock %} href="{% url 'entregables' %}">entregables</a>
+                <a class={% block boton_estudiantes %} {% endblock %} href="{% url 'estudiantes' %}">estudiantes</a>
+                <a class={% block boton_cursos %} {% endblock %} href="{% url 'cursos' %}">cursos</a>
+                <!--<a class="btn btn-primary" href="{% url 'cursos' %}">cursos</a>-->
             </div>
         </nav>
         <!-- Masthead-->

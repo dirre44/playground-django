@@ -4,8 +4,16 @@
 
 {% block encabezado %} Estudiantes {% endblock %}
 
+{% block boton_profesores %} "btn btn-primary" {% endblock %}
+{% block boton_entregabless %} "btn btn-primary" {% endblock %}
+{% block boton_estudiantes %} "btn btn-danger" {% endblock %}
+{% block boton_cursos %} "btn btn-primary" {% endblock %}
+
 {% block titulo %} listado de Estudiantes {% endblock %}
 
 {% block contenido %} 
-    <h3>Pincha</h3>
+    <h1>Aca estan los Estudiantes</h1>
+    {% for estudiante in estudiantes %}
+        <li>{{ estudiante.nombre }} - {{ estudiante.apellido }} - {{ estudiante.email }}</li>
+    {% endfor %}
 {% endblock %}

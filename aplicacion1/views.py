@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Curso
+from .models import *
 from django.http import HttpResponse
 from django.template import Template, Context, loader
 
@@ -32,7 +32,8 @@ def cursos(request):
     return render(request,"cursos.html", {"cursos":cursos})
 
 def estudiantes(request):
-    return render(request,"estudiantes.html")
+    estudiantes = Estudiante.objects.all()
+    return render(request,"estudiantes.html", {"estudiantes":estudiantes})
 
 def entregables(request):
     return render(request,"entregables.html")
